@@ -128,6 +128,26 @@ class DoublyLinkedList:
         # if list is empty
         if self.head is None and self.tail is None:
             return
+        else:
+            # change current node's prev and next to point at eachother
+            # save the init_head
+            # change curr_node to head and link with init_head
+            curr_node = node
+            init_head = self.head
+            right = curr_node.next
+            left = curr_node.prev
+
+            right.prev = left
+            left.next = right
+
+            self.head = curr_node
+
+            curr_node.next = init_head
+            curr_node.prev = None
+            init_head.prev = curr_node
+
+
+
 
     """Removes the input node from its current spot in the 
     List and inserts it as the new tail node of the List."""

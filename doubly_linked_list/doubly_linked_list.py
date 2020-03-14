@@ -237,12 +237,12 @@ class DoublyLinkedList:
 
 our_dll = DoublyLinkedList()
 
-our_dll.add_to_tail(5)
-our_dll.add_to_head(10)
-our_dll.add_to_tail(0)
-our_dll.delete(our_dll.head)
-our_dll.delete(our_dll.head)
-our_dll.add_to_tail(50)
+# our_dll.add_to_tail(5)
+# our_dll.add_to_head(10)
+# our_dll.add_to_tail(0)
+# our_dll.delete(our_dll.head)
+# our_dll.delete(our_dll.head)
+# our_dll.add_to_tail(50)
 
-print(our_dll)
-print(our_dll.get_max())
+# print(our_dll)
+# print(our_dll.get_max())

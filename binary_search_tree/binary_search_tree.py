@@ -31,19 +31,29 @@ class BinarySearchTree:
             else:
                 # continue right
                 self.right.insert(value)
-                
+
 
     # Return True if the tree contains the value
     # False if it does not
     def contains(self, target):
         # compare to current node
         # if smaller, go left
+        if target < self.value:
+            # if smaller, but can't go left, return false
+            if self.left is None:
+                return False
+            else:
+                self.left.contains(target)
         # if bigger, go right
+        if target > self.value:
+            # if bigger, but can't go right, return false
+            if self.right is None:
+                return False
+            else:
+                self.right.contains(target)
         # if equal, return true
-
-        # if smaller, but can't go left, return false
-        # if bigger, but can't go right, return false
-        pass
+        if target == self.value:
+            return True
 
     # Return the maximum value found in the tree
     def get_max(self):

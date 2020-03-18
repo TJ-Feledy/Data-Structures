@@ -24,7 +24,7 @@ class BinarySearchTree:
                 # continue to left
                 self.left.insert(value)
         # if bigger, go right
-        elif value > self.value:
+        elif value >= self.value:
             if self.right is None:
                 # insert tree node
                 self.right = BinarySearchTree(value)
@@ -43,26 +43,39 @@ class BinarySearchTree:
             if self.left is None:
                 return False
             else:
-                self.left.contains(target)
+                return self.left.contains(target)
         # if bigger, go right
         if target > self.value:
             # if bigger, but can't go right, return false
             if self.right is None:
                 return False
             else:
-                self.right.contains(target)
+                return self.right.contains(target)
         # if equal, return true
         if target == self.value:
             return True
 
     # Return the maximum value found in the tree
     def get_max(self):
-        pass
+        # traverse to the right until right equals None
+        # return self.value
+        while self.right is not None:
+            self = self.right
+        
+        return self.value
 
     # Call the function `cb` on the value of each node
     # You may use a recursive or iterative approach
     def for_each(self, cb):
-        pass
+        # perform cb on self.value
+        cb(self.value)
+        # if can go left, go left
+        if self.left is not None:
+            self.left.for_each(cb)
+        # if can go right, go right
+        if self.right is not None:
+            self.right.for_each(cb)
+
 
     # DAY 2 Project -----------------------
 

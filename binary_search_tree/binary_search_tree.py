@@ -111,7 +111,6 @@ class BinarySearchTree:
             if curr_node.right:
                 storage.enqueue(curr_node.right)
             
-        return
 
     # Print the value of every node, starting with the given node,
     # in an iterative depth first traversal
@@ -132,7 +131,6 @@ class BinarySearchTree:
             if curr_node.right:
                 storage.push(curr_node.right)
             
-        return
             
 
     # STRETCH Goals -------------------------
@@ -140,11 +138,25 @@ class BinarySearchTree:
 
     # Print Pre-order recursive DFT
     def pre_order_dft(self, node):
-        pass
+        # print node
+        print(node.value)
+        # go left
+        if node.left is not None:
+            node.pre_order_dft(node.left)
+        # go right
+        if node.right is not None:
+            node.pre_order_dft(node.right)
 
     # Print Post-order recursive DFT
     def post_order_dft(self, node):
-        pass
+        # go left
+        if node.left is not None:
+            node.post_order_dft(node.left)
+        # go right
+        if node.right is not None:
+            node.post_order_dft(node.right)
+        # print node
+        print(node.value)
 
 # bst = BinarySearchTree(5)
 
